@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title">
+  <title id="title">Abstract blue workplace background</title>
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#020617"/>
+      <stop offset="0.55" stop-color="#0f2f5f"/>
+      <stop offset="1" stop-color="#0369a1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1220 210) rotate(135) scale(620)">
+      <stop stop-color="#38bdf8" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#base)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <g fill="none" stroke="#fff" stroke-opacity=".08">
+    <circle cx="180" cy="170" r="280"/>
+    <circle cx="180" cy="170" r="390"/>
+    <circle cx="1390" cy="820" r="270"/>
+    <path d="M0 760C320 570 520 940 850 720s510-120 750-300"/>
+  </g>
+</svg>

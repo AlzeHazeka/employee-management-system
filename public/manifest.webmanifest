@@ -1,0 +1,17 @@
+{
+  "name": "Employee Management System",
+  "short_name": "Employee Management",
+  "description": "Employee attendance, leave, overtime, records, reporting, and administrative workflows.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

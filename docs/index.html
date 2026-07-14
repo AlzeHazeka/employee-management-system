@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Static portfolio showcase for the Employee Management System application.">
+  <meta name="theme-color" content="#071225">
+  <title>Employee Management System — Portfolio Demo</title>
+  <link rel="icon" href="assets/images/placeholder-dashboard.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Employee Management System home">
+        <span class="brand-mark" aria-hidden="true">EM</span>
+        <span><strong>Employee Management</strong><small>Portfolio Demo</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span><span></span><span></span><span></span>
+      </button>
+      <nav id="site-navigation" class="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#modules">Modules</a>
+        <a href="#run">Run locally</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow">Full-stack employee operations</p>
+          <h1>Employee Management System</h1>
+          <p class="hero-lead">A responsive Laravel and Vue application for employee records, GPS-assisted attendance, leave, overtime, operational reporting, and daily-pay calculations.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#overview">Explore the project</a>
+            <a class="button button-secondary" href="#" data-repository-link>Repository link</a>
+          </div>
+          <p class="microcopy">Static showcase only. The Laravel backend runs locally with PHP and MySQL.</p>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/images/placeholder-dashboard.svg" alt="Sanitized placeholder preview of an employee operations dashboard">
+          <span class="visual-label">Sanitized UI placeholder</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container split-grid">
+        <div>
+          <p class="eyebrow">Project overview</p>
+          <h2>One operational view instead of scattered records</h2>
+        </div>
+        <div class="prose">
+          <p>Attendance logs, employee profiles, leave records, and overtime details are difficult to audit when they live in separate tools. This application centralizes those workflows and applies role-based access for administrators and employees.</p>
+          <p>The portfolio version keeps the real implemented modules while replacing internal identity, data, configuration, and imagery with generic local-demo content.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section section-muted">
+      <div class="container">
+        <p class="eyebrow">Key features</p>
+        <h2>Designed around day-to-day employee operations</h2>
+        <div class="card-grid feature-grid">
+          <article class="card"><span class="card-index">01</span><h3>Secure access</h3><p>Email/username login, active-account enforcement, password recovery, optional two-factor authentication, roles, and granular permissions.</p></article>
+          <article class="card"><span class="card-index">02</span><h3>Employee records</h3><p>Searchable employee profiles with employment status, position, compensation type, and administrative CRUD workflows.</p></article>
+          <article class="card"><span class="card-index">03</span><h3>Attendance</h3><p>GPS-assisted check-in/check-out with accuracy, IP, user-agent metadata, throttling, history, and monthly summaries.</p></article>
+          <article class="card"><span class="card-index">04</span><h3>Leave and overtime</h3><p>Leave eligibility and history plus overtime start/finish records with location metadata and operational safeguards.</p></article>
+          <article class="card"><span class="card-index">05</span><h3>Reports and export</h3><p>Daily, per-employee, and monthly reporting with PDF and Excel export paths.</p></article>
+          <article class="card"><span class="card-index">06</span><h3>Daily payroll</h3><p>Daily-pay calculations combine completed attendance, leave rules, and overtime detail into a printable summary.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" aria-labelledby="workflow-title">
+      <div class="container">
+        <p class="eyebrow">Workflow previews</p>
+        <h2 id="workflow-title">Sanitized placeholders ready for replacement</h2>
+        <div class="gallery">
+          <figure><img src="assets/images/placeholder-attendance.svg" alt="Placeholder attendance interface"><figcaption><strong>Attendance</strong><span>Check-in/out and monthly status context.</span></figcaption></figure>
+          <figure><img src="assets/images/placeholder-leave.svg" alt="Placeholder leave request interface"><figcaption><strong>Leave</strong><span>Eligibility, submission, and request history.</span></figcaption></figure>
+        </div>
+        <p class="replacement-note">Replace <code>docs/assets/images/placeholder-*.svg</code> with sanitized application screenshots before publishing the portfolio.</p>
+      </div>
+    </section>
+
+    <section id="architecture" class="section section-dark">
+      <div class="container architecture-grid">
+        <div>
+          <p class="eyebrow">Architecture</p>
+          <h2>A pragmatic Laravel modular monolith</h2>
+          <p>Inertia connects Laravel routes and controllers to Vue pages. Reusable payroll and attendance calculations live in service classes, shared business rules live in support classes, and Eloquent provides data access.</p>
+        </div>
+        <div class="flow" aria-label="Architecture flow">
+          <div><span>Presentation</span><strong>Vue 3 · Inertia · Tailwind</strong></div>
+          <i aria-hidden="true">↓</i>
+          <div><span>HTTP boundary</span><strong>Routes · Controllers · Requests · Middleware</strong></div>
+          <i aria-hidden="true">↓</i>
+          <div><span>Application rules</span><strong>Services · Support · Permissions</strong></div>
+          <i aria-hidden="true">↓</i>
+          <div><span>Data</span><strong>Eloquent · MySQL · Local storage</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Application modules</p><h2>Implemented scope</h2></div>
+          <p>Only source-verified capabilities are presented.</p>
+        </div>
+        <div class="module-list">
+          <div><strong>Identity & Access</strong><span>Authentication, profile, account status, roles, permissions, 2FA</span></div>
+          <div><strong>People</strong><span>Employee directory, create, update, view, delete, password reset</span></div>
+          <div><strong>Time & Attendance</strong><span>GPS check-in/out, history, manual entry, monthly recap</span></div>
+          <div><strong>Leave</strong><span>Eligibility validation, submission, monthly history</span></div>
+          <div><strong>Overtime</strong><span>Start/finish records, GPS metadata, administrative correction</span></div>
+          <div><strong>Reporting & Payroll</strong><span>Operational reports, PDF/Excel export, daily-pay calculator</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container stack-layout">
+        <div><p class="eyebrow">Technology stack</p><h2>Current source versions</h2></div>
+        <div class="chip-list" aria-label="Technology stack">
+          <span>PHP 8.3+</span><span>Laravel 13</span><span>Jetstream</span><span>Fortify</span><span>Sanctum</span><span>Spatie Permission 6</span><span>Inertia 2 / Vue adapter 3</span><span>Vue 3.5</span><span>Tailwind 3.4</span><span>Vite 6</span><span>MySQL 8.4</span><span>Laravel Sail</span><span>Redis optional</span><span>Mailpit</span><span>PHPUnit 11</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contribution-section">
+      <div class="container split-grid">
+        <div><p class="eyebrow">Developer contribution</p><h2>Portfolio focus</h2></div>
+        <div class="prose"><p>The implementation demonstrates full-stack workflow design, hybrid role/permission migration, attendance hardening, reusable recap and payroll calculations, responsive Vue composition, export workflows, and test coverage around authentication and attendance rules.</p><p>The public preparation adds safe local fixtures, neutral branding, configuration hardening, a backend-independent showcase, and transparent limitation notes.</p></div>
+      </div>
+    </section>
+
+    <section id="run" class="section section-dark">
+      <div class="container run-grid">
+        <div>
+          <p class="eyebrow">Run locally</p>
+          <h2>Seeded and review-ready</h2>
+          <p>Use MySQL and follow the full setup in the repository README. GitHub Pages hosts this showcase only; it cannot execute Laravel.</p>
+          <pre><code>composer install
+npm ci
+cp .env.example .env
+php artisan key:generate
+php artisan migrate:fresh --seed
+npm run build
+php artisan serve</code></pre>
+        </div>
+        <aside class="credential-card">
+          <p class="eyebrow">Local demo credentials</p>
+          <dl>
+            <div><dt>Administrator</dt><dd>admin@example.com</dd></div>
+            <div><dt>HR Manager</dt><dd>hr@example.com</dd></div>
+            <div><dt>Employee</dt><dd>employee@example.com</dd></div>
+            <div><dt>Password</dt><dd>password</dd></div>
+          </dl>
+          <p>For local development only. Never reuse demo credentials in a deployed environment.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="privacy-banner" aria-labelledby="privacy-title">
+      <div class="container">
+        <p class="eyebrow">Privacy note</p>
+        <h2 id="privacy-title">Fictional data, sanitized assets, no production services</h2>
+        <p>All names, records, locations, contacts, compensation values, and business data shown by this portfolio are fictional. No production credentials, internal screenshots, personal records, or live integrations are included.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-layout"><p>Employee Management System · Portfolio Demo</p><p>© <span data-current-year>2026</span> · All Rights Reserved</p></div>
+  </footer>
+</body>
+</html>
