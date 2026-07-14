@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory<User>
  */
 class UserFactory extends Factory
 {
@@ -48,6 +48,13 @@ class UserFactory extends Factory
     {
         return $this->state(fn () => [
             'role' => 'Admin',
+        ]);
+    }
+
+    public function superAdmin(): static
+    {
+        return $this->state(fn () => [
+            'role' => 'Super Admin',
         ]);
     }
 

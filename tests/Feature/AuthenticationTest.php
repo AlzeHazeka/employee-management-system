@@ -57,6 +57,17 @@ class AuthenticationTest extends TestCase
         $response->assertSessionHasErrors(['login']);
     }
 
+    public function test_existing_session_is_terminated_when_user_becomes_inactive(): void
+    {
+        $user = User::factory()->inactive()->create();
+
+        $response = $this->actingAs($user)->get('/dashboard');
+
+        $this->assertGuest();
+        $response->assertRedirect('/login');
+        $response->assertSessionHasErrors(['login']);
+    }
+
     public function test_users_can_not_authenticate_with_invalid_password(): void
     {
         $user = User::factory()->create();

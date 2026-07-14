@@ -13,6 +13,13 @@ class IzinEligibilityTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function tearDown(): void
+    {
+        Carbon::setTestNow();
+
+        parent::tearDown();
+    }
+
     public function test_cannot_submit_izin_when_presensi_exists_on_same_date(): void
     {
         Carbon::setTestNow(Carbon::create(2026, 5, 18, 8, 0, 0, 'Asia/Jakarta'));
@@ -84,5 +91,32 @@ class IzinEligibilityTest extends TestCase
         $response->assertJsonPath('data.date', '2026-05-18');
         $response->assertJsonPath('data.has_presensi', true);
         $response->assertJsonPath('data.blocked_by_activity', true);
+    }
+
+    public function test_employee_can_submit_valid_izin_once(): void
+    {
+        Carbon::setTestNow(Carbon::create(2026, 5, 18, 8, 0, 0, 'Asia/Jakarta'));
+
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
+        $payload = [
+            'tanggal_izin' => '2026-05-19',
+            'keterangan' => 'Keperluan keluarga fiktif.',
+        ];
+
+        $this->postJson(route('izin.ajukan'), $payload)
+            ->assertOk()
+            ->assertJsonPath('status', 'success');
+
+        $this->postJson(route('izin.ajukan'), $payload)
+            ->assertOk()
+            ->assertJsonPath('status', 'error');
+
+        $this->assertDatabaseCount('izin', 1);
+        $this->assertDatabaseHas('izin', [
+            'user_id' => $user->user_id,
+            'tanggal_izin' => '2026-05-19',
+        ]);
     }
 }

@@ -12,6 +12,13 @@ class PresensiHardeningTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function tearDown(): void
+    {
+        Carbon::setTestNow();
+
+        parent::tearDown();
+    }
+
     public function test_presensi_masuk_uses_server_time_not_client_time(): void
     {
         Carbon::setTestNow(Carbon::create(2026, 5, 12, 8, 0, 0, 'Asia/Jakarta'));

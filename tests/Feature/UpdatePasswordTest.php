@@ -13,7 +13,7 @@ class UpdatePasswordTest extends TestCase
 
     public function test_password_can_be_updated(): void
     {
-        $this->actingAs($user = User::factory()->create());
+        $this->actingAs($user = User::factory()->superAdmin()->create());
 
         $response = $this->from('/user/profile')->put(route('user-password.update', absolute: false), [
             'current_password' => 'password',
@@ -27,7 +27,7 @@ class UpdatePasswordTest extends TestCase
 
     public function test_current_password_must_be_correct(): void
     {
-        $this->actingAs($user = User::factory()->create());
+        $this->actingAs($user = User::factory()->superAdmin()->create());
 
         $response = $this->from('/user/profile')->put(route('user-password.update', absolute: false), [
             'current_password' => 'wrong-password',
@@ -41,7 +41,7 @@ class UpdatePasswordTest extends TestCase
 
     public function test_new_passwords_must_match(): void
     {
-        $this->actingAs($user = User::factory()->create());
+        $this->actingAs($user = User::factory()->superAdmin()->create());
 
         $response = $this->from('/user/profile')->put(route('user-password.update', absolute: false), [
             'current_password' => 'password',
@@ -50,6 +50,20 @@ class UpdatePasswordTest extends TestCase
         ]);
 
         $response->assertSessionHasErrorsIn('updatePassword', ['password']);
+        $this->assertTrue(Hash::check('password', $user->fresh()->password));
+    }
+
+    public function test_employee_cannot_update_password_without_permission(): void
+    {
+        $this->actingAs($user = User::factory()->create());
+
+        $response = $this->put(route('user-password.update', absolute: false), [
+            'current_password' => 'password',
+            'password' => 'new-password',
+            'password_confirmation' => 'new-password',
+        ]);
+
+        $response->assertForbidden();
         $this->assertTrue(Hash::check('password', $user->fresh()->password));
     }
 }

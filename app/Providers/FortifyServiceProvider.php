@@ -6,17 +6,17 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Laravel\Fortify\Fortify;
-use App\Models\User;
-use Laravel\Fortify\Http\Requests\LoginRequest;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
+use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Http\Requests\LoginRequest;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -71,6 +71,16 @@ class FortifyServiceProvider extends ServiceProvider
 
             return null;
         });
+
+        // The login form intentionally uses a virtual "login" field so users can
+        // enter either an email address or username. Password confirmation must
+        // validate the authenticated user directly because no database column
+        // named "login" exists.
+        Fortify::confirmPasswordsUsing(
+            fn (User $user, ?string $password): bool => is_string($password)
+                && Hash::check($password, $user->password)
+        );
+
         RateLimiter::for('login', function (Request $request) {
             $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
 
