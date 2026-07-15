@@ -4,9 +4,42 @@ A web-based employee management application for attendance, leave, overtime, emp
 
 This repository is prepared as a portfolio demonstration. It contains only fictional sample data, local development configuration, and sanitized assets. No production credentials or personal records are included.
 
+[![PHP 8.3+](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](composer.json)
+[![Laravel 13](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)](composer.json)
+[![Vue 3](https://img.shields.io/badge/Vue-3-42B883?logo=vuedotjs&logoColor=white)](package.json)
+[![License: Portfolio](https://img.shields.io/badge/License-Portfolio--only-334155)](LICENSE)
+
+**Portfolio showcase:** [open the static site](https://alzehazeka.github.io/employee-management-system/) · GitHub Pages may not be enabled yet. The showcase is static and does not claim a live Laravel backend demo.
+
 ## Problem Statement
 
 Employee operations are often split across spreadsheets, messages, and manual attendance logs. This application brings employee records, timekeeping, leave, overtime, role-based access, and reporting into one responsive web interface while preserving an auditable operational record.
+
+## Application Preview
+
+The daily attendance report is the primary portfolio view because it combines date filtering, operational summaries, sortable employee records, permission-aware controls, and PDF/Excel export paths. The image below is an abstract placeholder—not an application screenshot—and will be replaced after a sanitized manual capture is supplied.
+
+![Placeholder requesting a sanitized screenshot of the daily attendance report](docs/assets/images/screenshots/placeholders/reports-daily.svg)
+
+Expected final file: `docs/assets/images/screenshots/reports-daily.webp` · Route: `/admin/presensi/by-date` · Role: `Super Admin`
+
+### Core Workflows
+
+| Access and history | People and attendance |
+| --- | --- |
+| [![Placeholder requesting a sanitized login screenshot](docs/assets/images/screenshots/placeholders/login.svg)](SCREENSHOT_GUIDE.md#01--login) | [![Placeholder requesting a sanitized employee directory screenshot](docs/assets/images/screenshots/placeholders/employee-directory.svg)](SCREENSHOT_GUIDE.md#02--employee-directory) |
+| **Login** — Guest access and authentication entry point.<br>Final: `login.webp` | **Employee directory** — Search, status, roles, and CRUD entry points.<br>Final: `employee-directory.webp` |
+| [![Placeholder requesting a sanitized attendance history screenshot](docs/assets/images/screenshots/placeholders/attendance-history.svg)](SCREENSHOT_GUIDE.md#04--attendance-history) | [![Placeholder requesting a sanitized employee attendance screenshot](docs/assets/images/screenshots/placeholders/attendance.svg)](SCREENSHOT_GUIDE.md#03--employee-attendance) |
+| **Attendance history** — Calendar, monthly status, and day detail.<br>Final: `attendance-history.webp` | **Employee attendance** — GPS-assisted check-in and check-out states.<br>Final: `attendance.webp` |
+
+| Leave and overtime | Reporting and payroll |
+| --- | --- |
+| [![Placeholder requesting a sanitized leave management screenshot](docs/assets/images/screenshots/placeholders/leave.svg)](SCREENSHOT_GUIDE.md#05--leave-management) | [![Placeholder requesting a sanitized daily report screenshot](docs/assets/images/screenshots/placeholders/reports-daily.svg)](SCREENSHOT_GUIDE.md#07--daily-attendance-report) |
+| **Leave management** — Eligibility, submission, and monthly history.<br>Final: `leave.webp` | **Daily attendance report** — Summary, filtering, sorting, and exports.<br>Final: `reports-daily.webp` |
+| [![Placeholder requesting a sanitized overtime screenshot](docs/assets/images/screenshots/placeholders/overtime.svg)](SCREENSHOT_GUIDE.md#06--overtime-management) | [![Placeholder requesting a sanitized daily payroll screenshot](docs/assets/images/screenshots/placeholders/payroll-daily.svg)](SCREENSHOT_GUIDE.md#08--daily-payroll-detail) |
+| **Overtime management** — Start, finish, and safeguarded activity states.<br>Final: `overtime.webp` | **Daily payroll detail** — Attendance, leave, overtime, and pay summary.<br>Final: `payroll-daily.webp` |
+
+All preview content and future screenshots must use fictional demo data only. See [SCREENSHOT_GUIDE.md](SCREENSHOT_GUIDE.md) for exact routes, roles, viewport, sanitization rules, and capture order. Source entry points are documented in [`routes/web.php`](routes/web.php), [`resources/js/Pages`](resources/js/Pages), and the shared [sidebar navigation](resources/js/lib/navigation/sidebarNavigation.js).
 
 ## Available Features
 
@@ -202,7 +235,7 @@ The `docs/` directory is independent of Laravel, PHP, MySQL, and backend APIs:
 python3 -m http.server 8081 --directory docs
 ```
 
-Open `http://127.0.0.1:8081`. Replace `docs/assets/images/placeholder-*.svg` with sanitized screenshots and update the repository link placeholder before publication.
+Open `http://127.0.0.1:8081`. The page currently uses safe instruction cards from `docs/assets/images/screenshots/placeholders/`; they are intentionally not application mockups. Follow [SCREENSHOT_GUIDE.md](SCREENSHOT_GUIDE.md) before replacing them with the final WebP files.
 
 ### GitHub Pages
 

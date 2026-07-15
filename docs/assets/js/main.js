@@ -1,9 +1,8 @@
 const header = document.querySelector('[data-header]');
 const nav = document.querySelector('[data-nav]');
 const navToggle = document.querySelector('[data-nav-toggle]');
-const repositoryLink = document.querySelector('[data-repository-link]');
 
-const repositoryUrl = '#'; // Replace with the reviewed public repository URL before publishing.
+const repositoryUrl = 'https://github.com/AlzeHazeka/employee-management-system';
 
 function closeNavigation() {
   if (!nav || !navToggle) return;
@@ -22,13 +21,11 @@ window.addEventListener('scroll', () => {
   header?.classList.toggle('is-scrolled', window.scrollY > 12);
 }, { passive: true });
 
-if (repositoryLink) {
-  repositoryLink.setAttribute('href', repositoryUrl);
-  if (repositoryUrl === '#') {
-    repositoryLink.addEventListener('click', (event) => event.preventDefault());
-    repositoryLink.setAttribute('title', 'Replace the repository URL in docs/assets/js/main.js before publishing.');
-  }
-}
+document.querySelectorAll('[data-repository-link]').forEach((link) => {
+  link.setAttribute('href', repositoryUrl);
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noopener noreferrer');
+});
 
 document.querySelectorAll('[data-current-year]').forEach((element) => {
   element.textContent = String(new Date().getFullYear());
