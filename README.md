@@ -17,27 +17,27 @@ Employee operations are often split across spreadsheets, messages, and manual at
 
 ## Application Preview
 
-The daily attendance report is the primary portfolio view because it combines date filtering, operational summaries, sortable employee records, permission-aware controls, and PDF/Excel export paths. The image below is an abstract placeholder—not an application screenshot—and will be replaced after a sanitized manual capture is supplied.
+The daily attendance report is the primary portfolio view because it combines date filtering, operational summaries, sortable employee records, permission-aware controls, and PDF/Excel export paths. All application images shown below use sanitized fictional demo data.
 
-![Placeholder requesting a sanitized screenshot of the daily attendance report](docs/assets/images/screenshots/placeholders/reports-daily.svg)
+![Sanitized daily attendance report showing summary cards, filters, and operational records](docs/assets/images/screenshots/reports-daily.png)
 
-Expected final file: `docs/assets/images/screenshots/reports-daily.webp` · Route: `/admin/presensi/by-date` · Role: `Super Admin`
+Route: `/admin/presensi/by-date` · Role: `Super Admin`
 
 ### Core Workflows
 
 | Access and history | People and attendance |
 | --- | --- |
-| [![Placeholder requesting a sanitized login screenshot](docs/assets/images/screenshots/placeholders/login.svg)](SCREENSHOT_GUIDE.md#01--login) | [![Placeholder requesting a sanitized employee directory screenshot](docs/assets/images/screenshots/placeholders/employee-directory.svg)](SCREENSHOT_GUIDE.md#02--employee-directory) |
-| **Login** — Guest access and authentication entry point.<br>Final: `login.webp` | **Employee directory** — Search, status, roles, and CRUD entry points.<br>Final: `employee-directory.webp` |
-| [![Placeholder requesting a sanitized attendance history screenshot](docs/assets/images/screenshots/placeholders/attendance-history.svg)](SCREENSHOT_GUIDE.md#04--attendance-history) | [![Placeholder requesting a sanitized employee attendance screenshot](docs/assets/images/screenshots/placeholders/attendance.svg)](SCREENSHOT_GUIDE.md#03--employee-attendance) |
-| **Attendance history** — Calendar, monthly status, and day detail.<br>Final: `attendance-history.webp` | **Employee attendance** — GPS-assisted check-in and check-out states.<br>Final: `attendance.webp` |
+| [![Sanitized login page showing the application authentication entry point](docs/assets/images/screenshots/login.png)](SCREENSHOT_GUIDE.md#01--login) | [![Sanitized employee directory showing role and status information](docs/assets/images/screenshots/employee-directory.png)](SCREENSHOT_GUIDE.md#02--employee-directory) |
+| **Login** — Guest access and authentication entry point.<br>File: `login.png` | **Employee directory** — Search, status, roles, and CRUD entry points.<br>File: `employee-directory.png` |
+| [![Sanitized attendance history showing calendar and monthly status](docs/assets/images/screenshots/attendance-history.png)](SCREENSHOT_GUIDE.md#04--attendance-history) | [![Sanitized employee attendance workflow](docs/assets/images/screenshots/attendance.png)](SCREENSHOT_GUIDE.md#03--employee-attendance) |
+| **Attendance history** — Calendar, monthly status, and day detail.<br>File: `attendance-history.png` | **Employee attendance** — GPS-assisted check-in and check-out states.<br>File: `attendance.png` |
 
 | Leave and overtime | Reporting and payroll |
 | --- | --- |
-| [![Placeholder requesting a sanitized leave management screenshot](docs/assets/images/screenshots/placeholders/leave.svg)](SCREENSHOT_GUIDE.md#05--leave-management) | [![Placeholder requesting a sanitized daily report screenshot](docs/assets/images/screenshots/placeholders/reports-daily.svg)](SCREENSHOT_GUIDE.md#07--daily-attendance-report) |
-| **Leave management** — Eligibility, submission, and monthly history.<br>Final: `leave.webp` | **Daily attendance report** — Summary, filtering, sorting, and exports.<br>Final: `reports-daily.webp` |
-| [![Placeholder requesting a sanitized overtime screenshot](docs/assets/images/screenshots/placeholders/overtime.svg)](SCREENSHOT_GUIDE.md#06--overtime-management) | [![Placeholder requesting a sanitized daily payroll screenshot](docs/assets/images/screenshots/placeholders/payroll-daily.svg)](SCREENSHOT_GUIDE.md#08--daily-payroll-detail) |
-| **Overtime management** — Start, finish, and safeguarded activity states.<br>Final: `overtime.webp` | **Daily payroll detail** — Attendance, leave, overtime, and pay summary.<br>Final: `payroll-daily.webp` |
+| [![Sanitized leave management workflow](docs/assets/images/screenshots/leave.png)](SCREENSHOT_GUIDE.md#05--leave-management) | [![Sanitized daily attendance report](docs/assets/images/screenshots/reports-daily.png)](SCREENSHOT_GUIDE.md#07--daily-attendance-report) |
+| **Leave management** — Eligibility, submission, and monthly history.<br>File: `leave.png` | **Daily attendance report** — Summary, filtering, sorting, and exports.<br>File: `reports-daily.png` |
+| [![Sanitized overtime workflow](docs/assets/images/screenshots/overtime.png)](SCREENSHOT_GUIDE.md#06--overtime-management) | [![Sanitized daily payroll calculation](docs/assets/images/screenshots/payroll-daily.png)](SCREENSHOT_GUIDE.md#08--daily-payroll-detail) |
+| **Overtime management** — Start, finish, and safeguarded activity states.<br>File: `overtime.png` | **Daily payroll detail** — Attendance, leave, overtime, and pay summary.<br>File: `payroll-daily.png` |
 
 All preview content and future screenshots must use fictional demo data only. See [SCREENSHOT_GUIDE.md](SCREENSHOT_GUIDE.md) for exact routes, roles, viewport, sanitization rules, and capture order. Source entry points are documented in [`routes/web.php`](routes/web.php), [`resources/js/Pages`](resources/js/Pages), and the shared [sidebar navigation](resources/js/lib/navigation/sidebarNavigation.js).
 
@@ -235,7 +235,7 @@ The `docs/` directory is independent of Laravel, PHP, MySQL, and backend APIs:
 python3 -m http.server 8081 --directory docs
 ```
 
-Open `http://127.0.0.1:8081`. The page currently uses safe instruction cards from `docs/assets/images/screenshots/placeholders/`; they are intentionally not application mockups. Follow [SCREENSHOT_GUIDE.md](SCREENSHOT_GUIDE.md) before replacing them with the final WebP files.
+Open `http://127.0.0.1:8081`. The showcase uses the eight sanitized PNG screenshots from `docs/assets/images/screenshots/` and does not require Laravel or a backend service.
 
 ### GitHub Pages
 

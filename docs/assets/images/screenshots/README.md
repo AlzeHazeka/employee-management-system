@@ -2,17 +2,15 @@
 
 Folder ini menampung screenshot aplikasi yang diambil manual dan sudah disanitasi. Belum ada screenshot aplikasi asli di repository.
 
-File final yang diharapkan:
+Screenshot PNG terintegrasi:
 
-- `login.webp`
-- `employee-directory.webp`
-- `attendance.webp`
-- `attendance-history.webp`
-- `leave.webp`
-- `overtime.webp`
-- `reports-daily.webp`
-- `payroll-daily.webp`
+- `login.png`
+- `employee-directory.png`
+- `attendance.png`
+- `attendance-history.png`
+- `leave.png`
+- `overtime.png`
+- `reports-daily.png`
+- `payroll-daily.png`
 
-Gunakan viewport desktop `1440 × 900` (rasio 8:5), zoom 100%, dan data demo `example.com` saja. Instruksi per halaman tersedia di [`../../../../SCREENSHOT_GUIDE.md`](../../../../SCREENSHOT_GUIDE.md).
-
-Subfolder `placeholders/` berisi kartu petunjuk abstrak, bukan screenshot atau rekonstruksi UI aplikasi. Placeholder tersebut aman ditampilkan sampai screenshot manual tersedia.
+Seluruh screenshot terintegrasi berukuran `1920 × 1032`. Gunakan zoom 100% dan data demo `example.com` saja saat memperbarui asset. Instruksi per halaman tersedia di [`../../../../SCREENSHOT_GUIDE.md`](../../../../SCREENSHOT_GUIDE.md).
