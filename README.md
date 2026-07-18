@@ -154,7 +154,7 @@ cp .env.example .env
 ./sail npm run build
 ```
 
-The application uses port `8000` by default, Mailpit uses `8025`, and phpMyAdmin uses `8080`. Override the corresponding `FORWARD_*` values in the untracked `.env` if a port is already in use.
+The Sail application is available at `http://localhost` through host port `80`. Vite remains on `5173`, Mailpit uses `8025`, and phpMyAdmin uses `8080`. Override the corresponding port values in the untracked `.env` if a port is already in use.
 
 ## Demo Credentials
 
